@@ -1,0 +1,15 @@
+{
+  "name": "campus-ai-placement-bug",
+  "private": true,
+  "version": "1.0.0",
+  "description": "CampusAI: The Placement Bug — gamified growth platform for the NxtWave AI Workshop challenge.",
+  "scripts": {
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && pip install -r requirements.txt",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+    "dev": "npx concurrently -n backend,frontend -c green,cyan \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "seed": "cd backend && python -m seed.seed_data",
+    "build:frontend": "cd frontend && npm run build"
+  }
+}
